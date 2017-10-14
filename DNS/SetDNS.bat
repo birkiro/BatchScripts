@@ -13,7 +13,7 @@ echo DNS Servers are now automatically retrieved from DHCP
 goto :pause
 
 :manual
-echo setting Unblock-US DNS
+echo Setting Unblock-US DNS
 netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.23 index=1
 netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.22 index=2
 IF %ERRORLEVEL% NEQ 0 GOTO :error
@@ -22,9 +22,11 @@ goto :pause
 
 :wronginput
 echo Input is neither auto nor manual
+goto :pause
 
 :error
 echo Error: Setting DNS Servers to %switch% was probably already done! 
+goto :pauses
 
 :pause
 pause
