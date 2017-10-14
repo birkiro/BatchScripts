@@ -18,7 +18,9 @@ netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.23 index=1
 netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.22 index=2
 IF %ERRORLEVEL% NEQ 0 GOTO :error
 echo DNS Servers are now set to Unblock-US
-goto :pause
+start chrome https://www.unblock-us.com
+rem goto :pause
+goto :eof
 
 :wronginput
 echo Input is neither auto nor manual
