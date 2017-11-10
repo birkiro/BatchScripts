@@ -24,6 +24,7 @@ goto :finished
 echo Pulling all projects
 call :pull_project Patterns
 call :pull_project BatchScripts
+call :pull_project CodeVault
 echo Finished pulling all projects from the Github repository
 goto :finished
 
@@ -59,7 +60,7 @@ goto :finished
 
 :not_specified
 echo Command line parameter missing.
-echo available parameters: [all], [Patterns], [BatchScripts].
+echo available parameters: [all], [Patterns], [BatchScripts], [CodeVault].
 goto :finished
 
 :not_specifed_gitmethod
