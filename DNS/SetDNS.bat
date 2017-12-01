@@ -14,8 +14,8 @@ goto :pause
 
 :manual
 echo Setting Unblock-US DNS
-netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.23 index=1
-netsh interface ipv4 add dnsserver "Wi-Fi" address=208.122.23.22 index=2
+netsh interface ipv4 add dnsserver "Wi-Fi" address=64.145.73.5 index=1
+netsh interface ipv4 add dnsserver "Wi-Fi" address=	209.107.219.5 index=2
 IF %ERRORLEVEL% NEQ 0 GOTO :error
 echo DNS Servers are now set to Unblock-US
 start chrome https://www.unblock-us.com
@@ -28,7 +28,7 @@ goto :pause
 
 :error
 echo Error: Setting DNS Servers to %switch% was probably already done! 
-goto :pauses
+goto :pause
 
 :pause
 pause
